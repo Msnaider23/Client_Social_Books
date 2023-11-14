@@ -2,7 +2,7 @@ const gitHubId = document.querySelector('input[type=text]')
 const btnBuscar = document.querySelector('input[type=button')
 btnBuscar.onclick = function(){
     //Fazendo a conexao com a API
-    fetch('https://api.github.com/users/'+ gitHubId.value)
+    fetch('http://localhost 8080:/livros'+ gitHubId.value)
     .then(response => {
         if(response.ok){
             return response.json()
@@ -12,11 +12,11 @@ btnBuscar.onclick = function(){
         }
     })
     .then(data => {
-        document.querySelector('#name').textContent = data.name
-        document.querySelector('#bio').textContent = data.bio
-        document.querySelector('#followers').textContent = data.followers
-        document.querySelector('#location').textContent = data.location
-        document.querySelector('#avatar').src = data.avatar_url
+        document.querySelector('#nome').textContent = data.nome
+        document.querySelector('#editora').textContent = data.editora
+        document.querySelector('#resumo').textContent = data.resumo
+        document.querySelector('#autor').textContent = data.autor
+        document.querySelector('#id').textContent= data.id
         //E outros atributos que voce desejar
 
     })
